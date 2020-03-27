@@ -10001,6 +10001,22 @@ ul {
   white-space: nowrap;
 }
 
+.section-main p {
+  width: 1002px;
+  font-size: 24px;
+  position: relative;
+  margin: 0 auto;
+  color: #000;
+  font-weight: 400;
+  transition: color 0.45s ease;
+  text-align: left;
+  white-space: pre-line;
+}
+
+.section-main-about h1 span {
+  font-weight: bolder;
+}
+
 h1 span {
   position: relative;
   display: block;
@@ -10043,6 +10059,10 @@ h1 span:nth-child(1) {
 
 .section-work-to-clients .collapsible .collapsible-header {
   padding: 0;
+}
+
+.section-work-to-clients svg {
+  width: 100%;
 }
 
 .section-projects .image-project {
@@ -10170,7 +10190,7 @@ h1 span:nth-child(1) {
 }
 
 .section-list-news .new-description a:hover, .section-footer a:hover {
-  box-shadow: inset 0 -0.475em 0 rgba(247, 20, 12, 0.5);
+  box-shadow: inset 0 -1.25em 0 rgba(247, 20, 12, 0.5);
   color: #000;
 }
 
@@ -10223,6 +10243,26 @@ h1 span:nth-child(1) {
   margin-top: 2rem;
 }
 
+.background-section-capabilities {
+  background-image: linear-gradient(49deg, #ebf2f5, #e6f2fa);
+}
+
+.background-section-capabilities .section-capabilities {
+  margin-top: 100px;
+}
+
+.background-section-capabilities .section-capabilities .collection {
+  background: none;
+  border: 0;
+}
+
+.background-section-capabilities .section-capabilities .collection li {
+  background: none;
+  border: 0;
+  padding: 10px 5px;
+  font-weight: bold;
+}
+
 footer.page-footer {
   background-color: #212129;
 }
@@ -10256,4 +10296,239 @@ footer.page-footer .section-footer .footer-firstcontainer {
 
 footer.page-footer .section-footer .links-footer-container {
   font-size: 16px;
+}
+
+@-webkit-keyframes parlor-button-animation {
+  5% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  13% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  16% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+  20% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes parlor-button-animation {
+  5% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  13% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  16% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+  20% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes parlor-button-wave-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  2% {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+  12% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  14% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  16% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  18% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  22% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes parlor-button-wave-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  2% {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+  12% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  14% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  16% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  18% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  22% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+.section-main-about svg {
+  fill: black;
+  width: 32px;
+  height: 32px;
+}
+
+.section-main-about svg #parlor-hand-wave {
+  -webkit-animation: parlor-button-wave-animation 5s infinite;
+  animation: parlor-button-wave-animation 5s infinite;
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+
+.section-main-about svg.parlor-hand-wave {
+  -webkit-animation: parlor-button-wave-scale-animation 5s infinite;
+  animation: parlor-button-wave-scale-animation 5s infinite;
+}
+
+@media only screen and (max-width: 1024px) {
+  .section, .section-main h1, nav, body, .section-main p {
+    width: 100%;
+  }
+  nav {
+    top: 40px;
+    margin-left: 0;
+    position: fixed;
+    left: 0;
+  }
+  nav .brand-logo {
+    left: 20px;
+    -webkit-transform: none;
+    transform: none;
+  }
+  nav .btn-nav-container {
+    right: 20px;
+    top: 3px;
+    transform-origin: none;
+  }
+  .section-main {
+    padding-top: 214px;
+  }
+  .section-main h1 {
+    font-size: 1.8rem;
+    white-space: pre-line;
+    line-height: normal;
+    letter-spacing: normal;
+    padding: 0 0.75rem;
+  }
+  .section-main h1 span {
+    display: inline;
+  }
+  .section-main p {
+    padding: 0 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 599px), only screen and (orientation: landscape) and (max-width: 959px) {
+  body {
+    max-width: 100%;
+  }
+  body section {
+    overflow-x: hidden;
+  }
+  .section, .section-main h1, nav, body, .section-main p {
+    width: 100%;
+  }
+  .section-main {
+    padding-top: 214px;
+  }
+  .section-main h1 {
+    font-size: 1.8rem;
+    white-space: pre-line;
+    line-height: normal;
+    letter-spacing: normal;
+    padding: 0 0.75rem;
+  }
+  .section-main h1 span {
+    display: inline;
+  }
+  .section-main p {
+    padding: 0 0.75rem;
+  }
+  .section {
+    margin-top: 78px;
+    margin: 0 auto;
+    margin-top: 118px;
+  }
+  .section-projects .row > .col {
+    padding: 0;
+  }
+  .section-projects .mk-project {
+    margin-top: 0;
+  }
+  .section-projects .image-project {
+    padding: 0;
+  }
+  .section-command-photo {
+    margin-top: 15px;
+  }
+  .section-command-photo .swiper-container .photo-container {
+    max-height: 300px;
+    height: 100%;
+    padding: 0;
+  }
+  .section-command-photo .swiper-container .photo-container img.responsive-img {
+    max-width: 90%;
+    margin-left: 0%;
+  }
+  .section-command-photo .swiper-container-horizontal > .swiper-pagination-bullets, .section-command-photo .swiper-pagination-custom, .section-command-photo .swiper-pagination-fraction {
+    bottom: 0;
+  }
+  .section-list-news {
+    margin-top: 10px;
+  }
+  nav {
+    top: 40px;
+    margin-left: 0;
+    position: fixed;
+    left: 0;
+  }
+  nav .brand-logo {
+    left: 20px;
+    -webkit-transform: none;
+    transform: none;
+  }
+  nav .btn-nav-container {
+    right: 20px;
+    top: 3px;
+    transform-origin: none;
+  }
+  footer.page-footer .section-footer .footer-firstcontainer {
+    margin-bottom: 54px;
+  }
 }
