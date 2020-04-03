@@ -10279,6 +10279,14 @@ h1 span:nth-child(1) {
   padding-bottom: 114px;
   font-size: 20px;
   white-space: pre-line;
+  padding: 1rem;
+}
+
+.command-photo-about {
+  min-height: 100vh;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
 }
 
 footer.page-footer {
@@ -10571,6 +10579,13 @@ a.close:after {
   }
   .section-main p {
     padding: 0 0.75rem;
+  }
+  .section-full-information {
+    margin-top: 0;
+  }
+  .command-photo-about {
+    min-height: auto;
+    padding-top: 212px;
   }
 }
 
