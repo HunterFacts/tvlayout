@@ -1,4 +1,4 @@
-@import 'scss/_materialize.scss';
+@import './scss/_materialize.scss';
 @import './scss/_swiper.min.scss';
 @import './scss/_fonts.scss';
 body {
@@ -11,30 +11,35 @@ body {
 }
 .section-main {
     padding-top: 342px;
-}
-.section-main h1 {
-    width: 1002px;
-    font-size: 60px;
-    letter-spacing: -4px;
-    line-height: 70px;
-    position: relative;
-    margin: 0 auto;
-    color: #000;
-    font-weight: 400;
-    transition: color 0.45s ease;
-    text-align: left;
-    white-space: nowrap;
-}
-.section-main p {
-    width: 1002px;
-    font-size: 24px;
-    position: relative;
-    margin: 0 auto;
-    color: #000;
-    font-weight: 400;
-    transition: color 0.45s ease;
-    text-align: left;
-    white-space: pre-line;
+    .img-main {
+        width: 80%;
+        position: relative;
+        margin: 130px auto 0 auto;
+    }
+    h1 {
+        width: 1002px;
+        font-size: 60px;
+        letter-spacing: -4px;
+        line-height: 70px;
+        position: relative;
+        margin: 0 auto;
+        color: #000;
+        font-weight: 400;
+        transition: color 0.45s ease;
+        text-align: left;
+        white-space: nowrap;
+    }
+    p {
+        width: 1002px;
+        font-size: 24px;
+        position: relative;
+        margin: 0 auto;
+        color: #000;
+        font-weight: 400;
+        transition: color 0.45s ease;
+        text-align: left;
+        white-space: pre-line;
+    }
 }
 .section-main-about {
     h1 span{
@@ -58,6 +63,7 @@ h1 span:nth-child(1) {
     margin-top: 218px;
 }
 .section-work-to-clients {
+    margin-top: 144px;
     .collapsible {
         background: none;
         box-shadow: none;
@@ -272,6 +278,13 @@ h1 span:nth-child(1) {
 
     }
 }
+.section-full-information {
+    color: white;
+    margin-top: 0;
+    padding-bottom: 114px;
+    font-size: 20px;
+    white-space: pre-line;
+}
 footer.page-footer {
     background-color: #212129;
     .section-footer {
@@ -298,6 +311,99 @@ footer.page-footer {
             font-size: 16px;
         }
     }
+}
+@keyframes show-previe-img {
+    0% {
+        transform: translate(-15%, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+@keyframes show-previe-text {
+    0% {
+        transform: translate(15%, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+.hidden-text {
+    display: none;
+}
+.preview-product {
+    width: 100%;
+    z-index: 200;
+    height: 100vh;
+    position: fixed;
+    background-color: #000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+    .img-preview {
+        width: 50%;
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation-name: show-previe-img;
+        animation-duration: 1s;
+        opacity: 1;
+        padding: 20px;
+        img {
+            max-width: 100%;
+            
+            max-height: calc(100vh - 40px);
+            margin: 20px;
+        }
+        
+    }
+    .text-preview {
+        width: 40%;
+        display: flex;
+        white-space: pre-line;
+        color: white;
+        font-size: 20px;
+        animation-name: show-previe-text;
+        animation-duration: 1s;
+    }
+    &.visible-preview {
+        display: flex;
+    }
+}
+a.close {
+position: absolute;
+right: 32px;
+top: 32px;
+width: 32px;
+height: 32px;
+opacity: 1;
+}
+a.close:hover {
+opacity: 0.6;
+}
+a.close:before, a.close:after {
+position: absolute;
+left: 15px;
+content: ' ';
+height: 33px;
+width: 2px;
+background-color: white;
+}
+a.close:before {
+transform: rotate(45deg);
+}
+a.close:after {
+transform: rotate(-45deg);
+}
+.no-scroll {
+    overflow: hidden;
 }
 @-webkit-keyframes parlor-button-animation {
 5% {
@@ -398,8 +504,6 @@ footer.page-footer {
 .section-main-about {
     svg {
         fill: black;
-        width: 32px;
-        height: 32px;
     }
     svg #parlor-hand-wave {
     -webkit-animation: parlor-button-wave-animation 5s infinite;
@@ -449,6 +553,74 @@ footer.page-footer {
         }
     }
 }
+
+@keyframes showblocks {
+    from {
+        opacity: 0.5;
+        transform: translate(0, 30px);
+        animation-timing-function: ease-out;
+    }
+    66% {
+        opacity: 1;
+        transform: translate(0, 3px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+@keyframes showblockstwo {
+    0% {
+        opacity: 0;
+        transform: translate(0, 30px);
+    }
+    10% {
+        opacity: 0;
+        transform: translate(0, 30px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+@keyframes showblockslast {
+    0% {
+        opacity: 0;
+        transform: translate(0, 30px);
+    }
+    20% {
+        opacity: 0;
+        transform: translate(0, 30px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+.is-animate, .quantity-numberuser, .quantity-numberyear {
+    opacity: 0;
+    &.is-animate-active {
+        animation-name: showblocks;
+        animation-duration: 0.5s;
+        opacity: 1;
+    }
+}
+.is-animate-two {
+    opacity: 0;
+    &.is-animate-active {
+        animation-name: showblockstwo;
+        animation-duration: 0.7s;
+        opacity: 1;
+    }
+}
+.is-animate-last {
+    opacity: 0;
+    &.is-animate-active {
+        animation-name: showblockslast;
+        animation-duration: 0.8s;
+        opacity: 1;
+    }
+}
 @media only screen and (max-width:599px), only screen and (orientation: landscape) and (max-width: 959px) {
     body {
         max-width: 100%;
@@ -474,6 +646,16 @@ footer.page-footer {
         } 
         p {
             padding: 0 0.75rem;
+        }
+        svg {
+            fill: black;
+            width: 32px;
+            height: 32px;
+        }
+        .img-main {
+            width: 180%;
+            position: relative;
+            margin: 130px auto 0 -40%;
         }
     }
     .section {
@@ -529,6 +711,30 @@ footer.page-footer {
     }
     footer.page-footer .section-footer .footer-firstcontainer {
         margin-bottom: 54px;
+    }
+    .preview-product {
+        flex-wrap: wrap;
+        min-height: 100vh;
+        height: auto;
+        overflow-y: scroll;
+        height: 100%;
+        .img-preview {
+            display: none;
+        }
+        .text-preview {
+            width: 100%;
+            display: flex;
+            white-space: pre-line;
+            color: white;
+            font-size: 18px;
+            animation-name: show-previe-text;
+            animation-duration: 1s;
+            padding: 10px;
+        }
+    }
+    a.close {
+        top: 8px;
+        right: 8px;
     }
 }
 @media only screen and (max-width:1024px), only screen and (orientation: landscape) and (max-width: 1366px){
